@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대성그룹</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        window.onload = () => {
+            const progressCircle = document.querySelector(".autoplay-progress svg");
+            const progressContent = document.querySelector(".autoplay-progress span");
+            var swiper = new Swiper(".main_slide", {
+                centeredSlides: true,
+                autoplay: {
+                    delay: 50000,
+                    disableOnInteraction: false
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev"
+                },
+                on: {
+                    autoplayTimeLeft(s, time, progress) {
+                    progressCircle.style.setProperty("--progress", 1 - progress);
+                    //progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+                    }
+                }
+            });
+            var swiper = new Swiper(".news_slide", {
+                slidesPerView: 3.8,
+                spaceBetween: 60,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+            });
+
+            let Hd = document.getElementsByClassName('header')[0];
+            let bg = document.getElementsByClassName('bg')[0];
+            let logoImg = document.getElementsByClassName('logo_img')[0];
+            let nav = document.getElementsByClassName('nav')[0];
+            let gnb = document.getElementsByClassName('gnb')[0];
+            let langImg = document.getElementsByClassName('lang_img')[0];
+
+            nav.addEventListener('mouseenter', () => {
+                logoImg.src = 'img/logo.png';
+                langImg.src = 'img/hd_lang.svg';
+                Hd.style.backgroundColor = '#fff';
+                bg.style.display = 'block';
+            });
+            nav.addEventListener('mouseleave', () => {
+                logoImg.src = 'img/logo_w.png';
+                langImg.src = 'img/hd_lang_w.svg';
+                Hd.style.backgroundColor = 'transparent';
+                bg.style.display = 'none';
+            });
+
+            let langBtn = document.getElementsByClassName('lang_btn')[0];
+            let lang = document.getElementsByClassName('lang')[0];
+
+            langBtn.addEventListener('click', () => {
+                lang.classList.toggle('act');
+            });
+
+            let menuBtn = document.getElementsByClassName('menu_btn')[0];
+            let subNavWrap = document.getElementsByClassName('sub_nav_wrap')[0];
+            let closeBtn = document.getElementsByClassName('close_btn')[0];
+            let closeTxt = document.getElementsByClassName('close_text')[0];
+
+            menuBtn.addEventListener('click', () => {
+                subNavWrap.style.display = 'flex';
+            });
+            closeBtn.addEventListener('click', () => {
+                subNavWrap.style.display = 'none';
+            });
+            closeTxt.addEventListener('click', () => {
+                subNavWrap.style.display = 'none';
+            });
+
+            let depth03_1 = document.getElementsByClassName('depth-03')[0];
+            let depth03_2 = document.getElementsByClassName('depth-03')[1];
+            let depth03_3 = document.getElementsByClassName('depth-03')[2];
+            let depth03_4 = document.getElementsByClassName('depth-03')[3];
+            let depth04_1 = document.getElementsByClassName('depth-04')[0];
+            let depth04_2 = document.getElementsByClassName('depth-04')[1];
+            let depth04_3 = document.getElementsByClassName('depth-04')[2];
+            let depth04_4 = document.getElementsByClassName('depth-04')[3];
+
+            depth03_1.addEventListener('click', () => {
+                depth04_1.classList.toggle('act');
+                depth03_1.style.opacity = '1';
+            });
+            depth03_2.addEventListener('click', () => {
+                depth04_2.classList.toggle('act');
+                depth03_2.style.opacity = '1';
+            });
+            depth03_3.addEventListener('click', () => {
+                depth04_3.classList.toggle('act');
+                depth03_3.style.opacity = '1';
+            });
+            depth03_4.addEventListener('click', () => {
+                depth04_4.classList.toggle('act');
+                depth03_4.style.opacity = '1';
+            });
+
+            let prevBtn = document.getElementsByClassName('prev')[0];
+            let prevBtnImg = document.getElementsByClassName('prev_btn')[0];
+            let nextBtn = document.getElementsByClassName('next')[0];
+            let nextBtnImg = document.getElementsByClassName('next_btn')[0];
+
+            prevBtn.addEventListener('mouseenter', () => {
+                prevBtn.style.border = '1px solid #d81408';
+                prevBtnImg.src = 'img/slide_prev_r.svg';
+            });
+            prevBtn.addEventListener('mouseleave', () => {
+                prevBtn.style.border = '1px solid #eee';
+                prevBtnImg.src = 'img/slide_prev.svg';
+            });
+            nextBtn.addEventListener('mouseenter', () => {
+                nextBtn.style.border = '1px solid #d81408';
+                nextBtnImg.src = 'img/slide_next_r.svg';
+            });
+            nextBtn.addEventListener('mouseleave', () => {
+                nextBtn.style.border = '1px solid #eee';
+                nextBtnImg.src = 'img/slide_next.svg';
+            });
+
+        }; //script end
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="bg"></div>
+        <div class="inner">
+            <h1 class="logo">
+                <a href="#"><img class="logo_img" src="img/logo_w.png" alt="대성그룹 로고"></a>
+            </h1><!-- .logo end -->
+            <nav class="nav">
+                <ul class="gnb">
+                    <li>
+                        <a href="#" class="depth-01">그룹소개</a>
+                        <ul class="depth-02">
+                            <li><a href="#">기업소개(CI)</a></li>
+                            <li><a href="#">CEO</a></li>
+                            <li><a href="#">연혁</a></li>
+                            <li><a href="#">오시는길</a></li>
+                        </ul><!-- .depth-02 end -->
+                    </li>
+                    <li>
+                        <a href="#" class="depth-01">사업분야</a>
+                        <ul class="depth-02">
+                            <li><a href="#">에너지</a></li>
+                            <li><a href="#">환경</a></li>
+                            <li><a href="#">금융</a></li>
+                            <li><a href="#">문화/서비스</a></li>
+                            <li><a href="#">비영리재단</a></li>
+                            <li><a href="#">해외법인</a></li>
+                        </ul><!-- .depth-02 end -->
+                    </li>
+                    <li>
+                        <a href="#" class="depth-01">채용</a>
+                        <ul class="depth-02">
+                            <li><a href="#">인재상</a></li>
+                            <li><a href="#">채용공고</a></li>
+                        </ul><!-- .depth-02 end -->
+                    </li>
+                    <li>
+                        <a href="#" class="depth-01">프레스센터</a>
+                        <ul class="depth-02">
+                            <li><a href="#">언론기사</a></li>
+                            <li><a href="#">보도자료</a></li>
+                        </ul><!-- .depth-02 end -->
+                    </li>
+                </ul><!-- .gnb end -->
+            </nav><!-- .nav end -->
+            <ul class="global">
+                <li class="lang_wrap">
+                    <button class="lang_btn">
+                        <img class="lang_img" src="img/hd_lang_w.svg" alt="언어설정 버튼">
+                    </button><!-- .lang_btn end -->
+                    <ul class="lang">
+                        <li class="act"><a href="#">KOR</a></li>
+                        <li><a href="#">ENG</a></li>
+                    </ul><!-- .lang end -->
+                </li><!-- .lang_wrap end -->
+                <li class="menu_wrap">
+                    <button class="menu_btn">
+                        <img src="img/hd_menu.svg" alt="메뉴 버튼">
+                    </button><!-- .menu_btn end -->
+                    <div class="sub_nav_wrap">
+                        <div class="sub_nav">
+                            <div class="close">
+                                <a href="#" class="close_text">Close</a>
+                                <button class="close_btn">
+                                    <img src="img/all_menu_close_w.svg" alt="닫기 버튼">
+                                </button><!-- .close_btn end -->
+                            </div><!-- .close end -->
+                            <ul class="suv_gnb">
+                                <li>
+                                    <a href="#" class="depth-03">그룹소개</a>
+                                    <ul class="depth-04">
+                                        <li><a href="#">- 기업소개(CI)</a></li>
+                                        <li><a href="#">- CEO</a></li>
+                                        <li><a href="#">- 연혁</a></li>
+                                        <li><a href="#">- 오시는길</a></li>
+                                    </ul><!-- .depth-04 end -->
+                                </li>
+                                <li>
+                                    <a href="#" class="depth-03">사업분야</a>
+                                    <ul class="depth-04">
+                                        <li><a href="#">- 에너지</a></li>
+                                        <li><a href="#">- 환경</a></li>
+                                        <li><a href="#">- 금융</a></li>
+                                        <li><a href="#">- 문화/서비스</a></li>
+                                        <li><a href="#">- 비영리재단</a></li>
+                                        <li><a href="#">- 해외법인</a></li>
+                                    </ul><!-- .depth-04 end -->
+                                </li>
+                                <li>
+                                    <a href="#" class="depth-03">채용</a>
+                                    <ul class="depth-04">
+                                        <li><a href="#">- 인재상</a></li>
+                                        <li><a href="#">- 채용공고</a></li>
+                                    </ul><!-- .depth-04 end -->
+                                </li>
+                                <li>
+                                    <a href="#" class="depth-03">프레스센터</a>
+                                    <ul class="depth-04">
+                                        <li><a href="#">- 언론기사</a></li>
+                                        <li><a href="#">- 보도자료</a></li>
+                                    </ul><!-- .depth-04 end -->
+                                </li>
+                            </ul><!-- .suv_gnb end -->
+                        </div><!-- .sub_nav end -->
+                    </div><!-- .sub_nav_wrap end -->
+                </li><!-- .menu_wrap end -->
+            </ul><!-- .global end -->
+        </div><!-- .inner end -->
+    </header><!-- .header end -->
+    <main class="main">
+        <section class="main_visual">
+            <div class="swiper main_slide">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/visual-image-02.png" alt="비주얼 이미지 1">
+                        <div class="text">
+                            <strong>"Endless Challenges for a Better Life and a Greener Tomorrow."</strong>
+                            <h2>대성그룹은 인류의 풍요로운 삶과 깨끗한<br />
+                                환경을 위해 끊임없이 도전합니다</h2>
+                        </div><!-- .text end -->
+                    </div><!-- .swiper-slide end -->
+                    <div class="swiper-slide">
+                        <img src="img/visual-image-02.png" alt="비주얼 이미지 1">
+                        <div class="text">
+                            <strong>"Endless Challenges for a Better Life and a Greener Tomorrow."</strong>
+                            <h2>대성그룹은 인류의 풍요로운 삶과 깨끗한<br />
+                                환경을 위해 끊임없이 도전합니다</h2>
+                        </div><!-- .text end -->
+                    </div><!-- .swiper-slide end -->
+                    <div class="swiper-slide">
+                        <img src="img/visual-image-03.png" alt="비주얼 이미지 1">
+                        <div class="text">
+                            <strong>"Endless Challenges for a Better Life and a Greener Tomorrow."</strong>
+                            <h2>대성그룹은 인류의 풍요로운 삶과 깨끗한<br />
+                                환경을 위해 끊임없이 도전합니다</h2>
+                        </div><!-- .text end -->
+                    </div><!-- .swiper-slide end -->
+                    <div class="swiper-slide">
+                        <img src="img/visual-image-04.png" alt="비주얼 이미지 1">
+                        <div class="text">
+                            <strong>"Endless Challenges for a Better Life and a Greener Tomorrow."</strong>
+                            <h2>대성그룹은 인류의 풍요로운 삶과 깨끗한<br />
+                                환경을 위해 끊임없이 도전합니다</h2>
+                        </div><!-- .text end -->
+                    </div><!-- .swiper-slide end -->
+                </div><!-- .swiper-wrapper end -->
+                <div class="swiper-pagination"></div>
+                <div class="autoplay-progress">
+                    <svg viewBox="0 0 48 48">
+                        <circle cx="24" cy="24" r="20"></circle>
+                    </svg>
+                    <span></span>
+                </div><!-- .autoplay-progress end -->
+            </div><!-- .swiper main_slide end -->
+        </section><!-- .main_visual end -->
+        <section class="section-01">
+            <div class="list">
+                <div class="item">
+                    <div class="text_wrap">
+                        <h2>Energy</h2>
+                        <strong>도시가스를 넘어 신재생과 발전 등<br />
+                            글로벌 종합에너지 기술기업으로의 육성을 목표로 합니다.</strong>
+                        <p>에너지를 기반으로 성장한 대성그룹은 78년의 역사 동안 쌓아온 기술과 노하우를 바탕으로 도시가스에서<br />
+                            신재생에너지 기업으로서 사업 영역을 넓혀 Total Energy Solution 기업으로 성장하고 있습니다.</p>
+                        <a href="#" class="btn_wrap">
+                            <span>사업분야 바로가기</span>
+                        </a><!-- .btn_wrap end -->
+                    </div><!-- .text_wrap end -->
+                    <div class="img_wrap-01">
+                        <img src="img/main_imgs_txt1_1_1.png" alt="메인 이미지-01-1">
+                        <img src="img/main_imgs_txt1_1_2.png" alt="메인 이미지-01-2">
+                        <img src="img/main_imgs_txt1_1_3.png" alt="메인 이미지-01-3">
+                    </div><!-- .img_wrap-01 end -->
+                </div><!-- .item end -->
+                <div class="item">
+                    <div class="text_wrap">
+                        <h2>Environment</h2>
+                        <strong>지구와 인류, 기업의 지속가능한 공존을 위해 내일을 준비합니다.</strong>
+                        <p>폐기물 에너지화 프로젝트인 매립가스자원화사업(LFG) 및 CNG,<br />
+                            수소 충전소 사업 등을 추진하며 저탄소 녹색성장의 선두주자로<br />
+                            자리매김하고 있습니다.</p>
+                        <a href="#" class="btn_wrap">
+                            <span>사업분야 바로가기</span>
+                        </a><!-- .btn_wrap end -->
+                    </div><!-- .text_wrap end -->
+                    <div class="img_wrap-02">
+                        <img src="img/main_imgs_txt1_2_1.png" alt="메인 이미지-02-1">
+                        <img src="img/main_imgs_txt1_2_2.png" alt="메인 이미지-02-2">
+                    </div><!-- .img_wrap-02 end -->
+                </div><!-- .item end -->
+                <div class="item">
+                    <div class="text_wrap">
+                        <h2>Venture Capital</h2>
+                        <strong>전문성과 공익성을 추구하며 기업의 성장을 돕고있습니다.</strong>
+                        <p>혁신적이고 유망한 프로젝트와 기업을 발굴해 정밀한 시장 조사와 사업성 평가를<br />
+                            통해 최적의 투자 결정을 내립니다. 이후 전략적 후속 지원과 지속적인 가치 창출<br />
+                            관리를 통해 투자 수익을 극대화합니다.</p>
+                        <a href="#" class="btn_wrap">
+                            <span>사업분야 바로가기</span>
+                        </a><!-- .btn_wrap end -->
+                    </div><!-- .text_wrap end -->
+                    <div class="img_wrap-03">
+                        <img src="img/main_imgs_txt1_3_1.png" alt="메인 이미지-03-1">
+                        <img src="img/main_imgs_txt1_3_2.png" alt="메인 이미지-03-2">
+                        <img src="img/main_imgs_txt1_3_3.png" alt="메인 이미지-03-3">
+                    </div><!-- .img_wrap-03 end -->
+                </div><!-- .item end -->
+            </div><!-- .list end -->
+        </section><!-- .section-01 end -->
+
+        <section class="section-02">
+            <div class="title">
+                <h2>NEWS</h2>
+                <div class="btn_wrap">
+                    <div class="btn">
+                        <button class="prev">
+                            <img class="prev_btn" src="img/slide_prev.svg" alt="이전 버튼">
+                        </button><!-- .prev end -->
+                        <button class="next">
+                            <img class="next_btn" src="img/slide_next.svg" alt="다음 버튼">
+                        </button><!-- .next end -->
+                    </div><!-- .btn end -->
+                    <a href="#" class="news">
+                        <span>더 많은 소식 보러가기</span>
+                    </a><!-- .news end -->
+                </div><!-- .btn_wrap -->
+            </div><!-- .title end -->
+            <div class="swiper news_slide">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#">
+                            <img src="img/new-img-1.jpg" alt="뉴스 이미지 1">
+                            <div class="news_text">
+                                <h3>"양자컴퓨팅, 미·중·유럽 정부가 투자…한국도 인력확보 급하다"</h3>
+                                <p>     [중앙일보 - 2024년 11월20일]							"양자컴퓨팅, 미·중·유럽 정부가 투자…	한국도 인력확보 급하다"		"양자는 암호라는 전략적 문제 때문에 미국·중국·유럽 등에서 정부 차원의 투자가 계속 이뤄질 겁니다. 한국도 우수 인력을 확보하지 않으면 안 됩니다."  양자컴퓨팅 분야의 세계적 석학인 김정상 미국 듀크대 전자컴퓨터공학과 교수는 지난 15일 김영훈 대성그룹 회장과 대담에서 이렇게 말했다. 김 교수는 상온 양자컴퓨터를 개발한 미국 스타트업 아이온큐의 공동 창업자로, 전날 대성그룹이 주최한 ‘2024 대성해강사이언스포럼’ 참석 차 방한했다. 2015년 설립된 아이온큐는 양자컴퓨팅 스타트업으로는 최초로 2021년 미국 뉴욕증시에 상장됐다.	이날 대담에서 에너지 전문가인 김 회장은 "향후 글로벌 시장 주도권은 양자컴퓨팅 기술 확보 여부에 따라 달라질 것"이라며 "에너지 쪽에선 양자컴퓨팅 낙수 효과로 또 다른 산업혁명이 일어날 수 있다"라고 말했다.			           김영훈 대성그룹 회장(오른쪽)과 김정상 듀크대 교수가 15일 서울 종로구에서 양자컴퓨터의 산업 현황과 한국의 역할 등을 주제로 대담하고 있다.  김성룡 기자		양자컴퓨터는 0과 1을 따로 인식하는 일반 컴퓨터와 달리, 0과 1이 중첩된 ‘큐비트(qubit)’에 기반해 작동한다. 이론적으로는 수퍼컴퓨터보다 30조배 이상, 일반 컴퓨터보다 1경배 이상 빠른 연산이 가능하다. 구글은 2019년 수퍼 컴퓨터로 1만년 걸릴 계산을 자사 양자 컴퓨터인 ‘시카모어’로 3분 여 만에 풀었다고 발표했다. 양자컴퓨팅은 특히 기존 암호를 풀 수 있다는 점에서 국가 안보와 직결되며, 미국과 중국이 앞다퉈 이 분야에 막대한 투자를 하고 있다.			두 전문가는 한국이 양자 기술 인재들을 확보해 아직 시장이 형성 안 된 ‘응용’ 분야에서 기회를 찾아야 한다고 제언했다. 김 교수는 "결국 인력 싸움"이라며 "시간과 투자가 많이 필요한 하드웨어와 달리, 응용 소프트웨어는 천재 같은 사람이 나와 방법론을 단번에 찾을 수 있다"라고 말했다. 김영훈 회장도 "한국이 소프트웨어 쪽에서 기여할 수 있을 것"이라고 말했다. 	김 교수는 미국과 유럽 등에서 최근 양자컴퓨터 관련 스타트업이 수백개 생겨난 사실을 언급하며, 국내 서도 다양한 아이디어가 모일 시스템이 갖춰지면 혁신을 이룰 수 있다고 낙관했다.			(하략)	황수연 기자</p>
+                                <span>2024-11-20</span>
+                            </div><!-- .news_text end -->
+                        </a>
+                    </div><!-- .swiper-slide end -->
+                    <div class="swiper-slide">
+                        <a href="#">
+                            <img src="img/new-img-2.jpg" alt="뉴스 이미지 2">
+                            <div class="news_text">
+                                <h3>과학기술 석학 한자리에... 대성그룹, `대성해강사이언스포럼` 개최</h3>
+                                <p>		[중앙일보 - 2024년 11월14일]									과학기술 석학 한자리에... 대성그룹,	'대성해강사이언스포럼' 개최 		​김영훈 대성그룹 회장이 14일 웨스틴 조선 호텔 서울에서 열린 '2024 대성해강사이언스포럼'에서 환영사를 하고 있다. 사진 대성그룹 			에너지 기업 대성그룹이 14일 웨스틴 조선 호텔 서울에서 '2024 대성해강사이언스포럼'을 개최했다고 밝혔다. 대성그룹은 2017년부터 지난해까지 글로벌 석학들과 인류 당면 과제를 논의하기 위해 대성해강미생물포럼을 진행해 왔다. 올해부터는 논의 주제를 기존 바이오와 미생물 등에서 과학 기술 전반으로 넓히기 위해 포럼 명칭을 대성해강사이언스포럼으로 변경했다.		올해 포럼 주제는 '양자 컴퓨팅과 노화'(Quantum Computing and Aging)였다. 생명공학과 양자 컴퓨팅, 인공지능, 시스템 생물학 등 과학기술 분야의 융합 연구 성과를 조명하고 다가올 미래의 혁신적 변화를 전망했다. 포럼에는 미국 양자컴퓨터 전문 기업인 아이온큐의 공동설립자이자 퀀텀 컴퓨터 연구의 세계적 권위자인 김정상 미국 듀크대 교수가 기조연설과 토론에 참여했다. 김갑진 카이스트 교수는 양자 기술이 미래 사회에 미칠 영향력에 대해 소개했다.			조광현 카이스트 교수는 시스템 생물학 연구의 최신 성과를 발표했으며, 이승재 카이스트 교수는 건강 수명을 연장할 수 있는 노화 과학에 대한비전을 제시했다. 스페셜 세션에는 바이오정보학 분야 대가인 이도헌 카이스트 교수가 발표에 나섰다.			(하략)	김지혜 기자</p>
+                                <span>2024-11-14</span>
+                            </div><!-- .news_text end -->
+                        </a>
+                    </div><!-- .swiper-slide end -->
+                    <div class="swiper-slide">
+                        <a href="#">
+                            <img src="img/new-img-3.jpg" alt="뉴스 이미지 3">
+                            <div class="news_text">
+                                <h3>"AI 활용한 바이오테크 혁신 기대" 대성해강미생물포럼 열려</h3>
+                                <p>[조선일보 - 2023년 09월27일]
+                            
+                                
+                            
+                                    “AI 활용한 바이오테크 혁신 기대”
+                                    대성해강미생물포럼 열려
+                            
+                            
+                            
+                                    대성그룹이 26일 서울 중구 웨스틴조선호텔에서 ‘바이오기술 혁신의 코어, AI’라는 주제로 ‘2023 대성해강미생물포럼’을 개최했다. 올해로 6회째를 맞은 이날 포럼에는 바이오테크와 인공지능(AI) 분야의 세계적인 석학들이 주제 발표와 패널토론에 나섰다.
+                            
+                                    참석자들은 광대하고 복잡한 바이오 분야 빅데이터와 AI의 결합으로 바이오화학, 바이오헬스, 지속가능 환경 분야의 최신 연구성과를 발표하고, 향후 기대되는 획기적인 설루션을 전망했다. 또한 AI와 생명과학의 발전에 따른 윤리 및 안전 이슈와 적절한 규제와 가이드라인의 필요성에 대한 심도 있는 논의도 진행됐다.
+                            
+                                    시스템 생물학의 대가로 세계 최초로 세포기능을 컴퓨터 시뮬레이션을 통해 구현한 버나드 폴슨 UC샌디에이고 교수, 컴퓨터를 활용한 단백질 구조 예측 신기술을 개발한 석차옥 서울대 교수, 세계 최초로 인공지능반도체 ‘메타브레인(MetaVRain)’을 개발한 유회준 KAIST 인공지능반도체대학원장이 주요 연사로 나섰다. 포럼 좌장은 조병관 KAIST 생명과학부 석좌교수가 맡았다.
+                            
+                                    (하략)
+                            
+                            
+                            
+                                    진중언 기자</p>
+                                <span>2023-09-27</span>
+                            </div><!-- .news_text end -->
+                        </a>
+                    </div><!-- .swiper-slide end -->
+                    <div class="swiper-slide">
+                        <a href="#">
+                            <img src="img/new-img-4.jpg" alt="뉴스 이미지 4">
+                            <div class="news_text">
+                                <h3>김영훈 회장 "양자생물학이 에너지·식량 고갈 해법 제공할 것"</h3>
+                                <p>[한국경제 - 2022년 09월27일]
+                            
+                            
+                            
+                                    김영훈회장“양자생물학이 에너지·식량 고갈 해법 제공할 것”
+                            
+                                        5회째 '대성해강미생물포럼' 여는
+                                    김영훈 대성그룹 회장
+                                    '연탄 재벌' 故 김수근 창업주 막내
+                                    법·경영·신학 등 석사학위만 3개
+                                    상대성이론~양자 과학지식 해박
+                                    "충전소 등 수소사업 확대할 것
+                                    '원전 르네상스' 위해 투자 늘려야"
+                            
+                            
+                                    “양자생물학이 에너지와 식량 고갈 문제를 해결할 실마리를 제공할 겁니다.”
+                                    김영훈 대성그룹 회장(사진)은 27일 한국경제신문과의 인터뷰에서 “양자생물학은 복잡하고 심도 있는 분야지만 최근 15년 동안 과학계에서 가장 뜨거운 주제의 하나로 떠올랐다”며 이같이 말했다. 양자생물학은 양자물리학 이론을 생물학에 결합한 분야로 철새의 이동과 식물의 광합성 원리를 찾는 과정 등에 활용되고 있다.
+                                    대성그룹은 지난 20일 서울 조선호텔에서 양자생물학을 주제로 올해 5회째인 ‘2022 대성해강미생물포럼’을 열었다. ‘연탄 재벌’로 불린 고(故) 김수근 대성그룹 창업주의 호(해강)를 딴 이 포럼의 주제는 ‘생명이란 무엇인가? 양자: 생명의 근원을 넘어 미래산업을 개척하다’였다.
+                                    김 회장은 “양자생물학은 자연계의 에너지 생산과 소비 흐름 파악을 돕는다”며 “인류가 혁신적이고 효율적이며 지속 가능한 에너지 시스템을 구축하는 초석이 될 것”이라고 말했다. 예컨대 식물의 광합성 원리를 양자 결맞음(quntum coherence)이라는 현상을 통해 입증할 수 있다. 식물이 태양광을 95%의 높은 효율로 생체 에너지로 전환할 수 있다는 점을 양자생물학으로 밝힌 것이다. 과학계에선 광합성 원리를 활용해 태양광의 효율을 극대화하는 식량 생산이나 에너지 시스템을 개발하는 데 활용될 것이라는 평가가 나온다.
+                                    (하략)
+                            
+                                
+                            
+                                    김익환 기자</p>
+                                <span>2022-10-06</span>
+                            </div><!-- .news_text end -->
+                        </a>
+                    </div><!-- .swiper-slide end -->
+                    <div class="swiper-slide"></div>
+                </div><!-- .swiper-wrapper end -->
+            </div><!-- .news_slide end -->
+        </section><!-- .section-02 end -->
+
+        <section class="section-03">
+            <h2>대성그룹의 채용정보를 확인하세요.</h2>
+            <div class="list">
+                <div class="item">
+                    <a href="#">
+                        <img src="img/main_recruit_menu1_1.jpg" alt="채용정보 이미지 1">
+                        <div class="text">
+                            <h3>인재상</h3>
+                            <p>에너지산업과 문화산업의 신기원을 이룩하는<br />
+                                대성그룹의 인재상을 소개합니다.</p>
+                            <span>VIEW MORE +</span>
+                        </div><!-- .text end -->
+                    </a>
+                </div><!-- .item end -->
+                <div class="item">
+                    <a href="#">
+                        <img src="img/main_recruit_menu1_2.jpg" alt="채용정보 이미지 2">
+                        <div class="text">
+                            <h3>채용공고</h3>
+                            <p>성실, 봉사, 진취라는 설립정신을 바탕으로 발전하는<br />
+                                대성그룹에 지원해보세요.</p>
+                            <span>VIEW MORE +</span>
+                        </div><!-- .text end -->
+                    </a>
+                </div><!-- .item end -->
+            </div><!-- .list end -->
+        </section><!-- .section-03 end -->
+    </main><!-- .main end -->
+    <footer class="footer">
+        <div class="info_wrap">
+            <div class="footer_top">
+                <a href="#" class="footer_logo"><img src="img/logo.png" alt="대성그룹 로고"></a>
+                <div class="footer_icon">
+                    <a href="#" class="down">대성그룹 소개자료</a>
+                    <select name="" id="family_site">
+                        <option value="">Family Site</option>
+                        <option value="daesung-holdings">대성홀딩스 (주)</option>
+                        <option value="daesungenergy">대성에너지 (주)</option>
+                        <option value="daesungcleanenergy">대성청정에너지 (주)</option>
+                        <option value="deeco">대성환경에너지 (주)</option>
+                        <option value="daesung">(주) 대성</option>
+                        <option value="korea">(주) 코리아닷컴 커뮤니케이션즈</option>
+                        <option value="daesungpe">대성창업투자 (주)</option>
+                        <option value="daesungglobal">대성글로벌테트웍 (주)</option>
+                    </select>
+                </div><!-- .footer_icon end -->
+            </div><!-- .footer_top end -->
+            <div class="address_wrap">
+                <div class="address_inner">
+                    <ul class="address">
+                        <li><strong>주소</strong></li>
+                        <li>03145 서울특별시 종로구 우정국로 68(관훈동) 동덕빌딩 6/11 층</li>
+                    </ul><!-- .address end -->
+                    <ul class="tell">
+                        <li><strong>TEL</strong></li>
+                        <li>02-3700-1700</li>
+                    </ul><!-- .tell end -->
+                    <ul class="fax">
+                        <li><strong>FAX</strong></li>
+                        <li>02-3700-1701</li>
+                    </ul><!-- .fax end -->
+                </div><!-- .address_inner end -->
+                <span>Copyright © DAESUNG Corp. All Rights Reserved...</span>
+            </div><!-- .address_wrap end -->
+        </div><!-- .info_wrap end -->
+    </footer><!-- .footer end -->
+    <div class="topbtn_wrap">
+        <a href="#" class="top_btn">
+            <img src="img/top_btn_arrow.svg" alt="위로가기">
+        </a>
+    </div><!-- .topbtn_wrap end -->
+</body>
+</html>
