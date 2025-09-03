@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>대성그룹</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/index.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -14,23 +15,13 @@
             var swiper = new Swiper(".main_slide", {
                 centeredSlides: true,
                 autoplay: {
-                    delay: 50000,
+                    delay: 5000,
                     disableOnInteraction: false
                 },
                 pagination: {
                     el: ".swiper-pagination",
                     clickable: true
                 },
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev"
-                },
-                on: {
-                    autoplayTimeLeft(s, time, progress) {
-                    progressCircle.style.setProperty("--progress", 1 - progress);
-                    //progressContent.textContent = `${Math.ceil(time / 1000)}s`;
-                    }
-                }
             });
             var swiper = new Swiper(".news_slide", {
                 slidesPerView: 3.8,
@@ -94,19 +85,35 @@
 
             depth03_1.addEventListener('click', () => {
                 depth04_1.classList.toggle('act');
-                depth03_1.style.opacity = '1';
+                if (depth04_1.classList.contains('act')) {
+                    depth03_1.style.opacity = '1';
+                } else {
+                    depth03_1.style.opacity = '0.5';
+                }
             });
             depth03_2.addEventListener('click', () => {
                 depth04_2.classList.toggle('act');
-                depth03_2.style.opacity = '1';
+                if (depth04_2.classList.contains('act')) {
+                    depth03_2.style.opacity = '1';
+                } else {
+                    depth03_2.style.opacity = '0.5';
+                }
             });
             depth03_3.addEventListener('click', () => {
                 depth04_3.classList.toggle('act');
-                depth03_3.style.opacity = '1';
+                if (depth04_3.classList.contains('act')) {
+                    depth03_3.style.opacity = '1';
+                } else {
+                    depth03_3.style.opacity = '0.5';
+                }
             });
             depth03_4.addEventListener('click', () => {
                 depth04_4.classList.toggle('act');
-                depth03_4.style.opacity = '1';
+                if (depth04_4.classList.contains('act')) {
+                    depth03_4.style.opacity = '1';
+                } else {
+                    depth03_4.style.opacity = '0.5';
+                }
             });
 
             let prevBtn = document.getElementsByClassName('prev')[0];
@@ -281,64 +288,58 @@
                     </div><!-- .swiper-slide end -->
                 </div><!-- .swiper-wrapper end -->
                 <div class="swiper-pagination"></div>
-                <div class="autoplay-progress">
-                    <svg viewBox="0 0 48 48">
-                        <circle cx="24" cy="24" r="20"></circle>
-                    </svg>
-                    <span></span>
-                </div><!-- .autoplay-progress end -->
             </div><!-- .swiper main_slide end -->
         </section><!-- .main_visual end -->
         <section class="section-01">
             <div class="list">
                 <div class="item">
                     <div class="text_wrap">
-                        <h2>Energy</h2>
-                        <strong>도시가스를 넘어 신재생과 발전 등<br />
+                        <h2 data-aos="fade-up" data-aos-duration="1000" >Energy</h2>
+                        <strong data-aos="fade-up" data-aos-duration="1000" >도시가스를 넘어 신재생과 발전 등<br />
                             글로벌 종합에너지 기술기업으로의 육성을 목표로 합니다.</strong>
-                        <p>에너지를 기반으로 성장한 대성그룹은 78년의 역사 동안 쌓아온 기술과 노하우를 바탕으로 도시가스에서<br />
+                        <p data-aos="fade-up" data-aos-duration="1000" >에너지를 기반으로 성장한 대성그룹은 78년의 역사 동안 쌓아온 기술과 노하우를 바탕으로 도시가스에서<br />
                             신재생에너지 기업으로서 사업 영역을 넓혀 Total Energy Solution 기업으로 성장하고 있습니다.</p>
-                        <a href="#" class="btn_wrap">
+                        <a href="#" class="btn_wrap" data-aos="fade-up" data-aos-duration="1000" >
                             <span>사업분야 바로가기</span>
                         </a><!-- .btn_wrap end -->
                     </div><!-- .text_wrap end -->
                     <div class="img_wrap-01">
-                        <img src="img/main_imgs_txt1_1_1.png" alt="메인 이미지-01-1">
-                        <img src="img/main_imgs_txt1_1_2.png" alt="메인 이미지-01-2">
-                        <img src="img/main_imgs_txt1_1_3.png" alt="메인 이미지-01-3">
+                        <img data-aos="fade-up" data-aos-duration="1000" src="img/main_imgs_txt1_1_1.png" alt="메인 이미지-01-1">
+                        <img data-aos="fade-up" data-aos-duration="1000" src="img/main_imgs_txt1_1_2.png" alt="메인 이미지-01-2">
+                        <img data-aos="fade-up" data-aos-duration="1000" src="img/main_imgs_txt1_1_3.png" alt="메인 이미지-01-3">
                     </div><!-- .img_wrap-01 end -->
                 </div><!-- .item end -->
                 <div class="item">
                     <div class="text_wrap">
-                        <h2>Environment</h2>
-                        <strong>지구와 인류, 기업의 지속가능한 공존을 위해 내일을 준비합니다.</strong>
-                        <p>폐기물 에너지화 프로젝트인 매립가스자원화사업(LFG) 및 CNG,<br />
+                        <h2 data-aos="fade-up" data-aos-duration="1000" >Environment</h2>
+                        <strong data-aos="fade-up" data-aos-duration="1000" >지구와 인류, 기업의 지속가능한 공존을 위해 내일을 준비합니다.</strong>
+                        <p data-aos="fade-up" data-aos-duration="1000" >폐기물 에너지화 프로젝트인 매립가스자원화사업(LFG) 및 CNG,<br />
                             수소 충전소 사업 등을 추진하며 저탄소 녹색성장의 선두주자로<br />
                             자리매김하고 있습니다.</p>
-                        <a href="#" class="btn_wrap">
+                        <a href="#" class="btn_wrap" data-aos="fade-up" data-aos-duration="1000" >
                             <span>사업분야 바로가기</span>
                         </a><!-- .btn_wrap end -->
                     </div><!-- .text_wrap end -->
                     <div class="img_wrap-02">
-                        <img src="img/main_imgs_txt1_2_1.png" alt="메인 이미지-02-1">
-                        <img src="img/main_imgs_txt1_2_2.png" alt="메인 이미지-02-2">
+                        <img data-aos="fade-up" data-aos-duration="1000" src="img/main_imgs_txt1_2_1.png" alt="메인 이미지-02-1">
+                        <img data-aos="fade-up" data-aos-duration="1000" src="img/main_imgs_txt1_2_2.png" alt="메인 이미지-02-2">
                     </div><!-- .img_wrap-02 end -->
                 </div><!-- .item end -->
                 <div class="item">
                     <div class="text_wrap">
-                        <h2>Venture Capital</h2>
-                        <strong>전문성과 공익성을 추구하며 기업의 성장을 돕고있습니다.</strong>
-                        <p>혁신적이고 유망한 프로젝트와 기업을 발굴해 정밀한 시장 조사와 사업성 평가를<br />
+                        <h2 data-aos="fade-up" data-aos-duration="1000" >Venture Capital</h2>
+                        <strong data-aos="fade-up" data-aos-duration="1000" >전문성과 공익성을 추구하며 기업의 성장을 돕고있습니다.</strong>
+                        <p data-aos="fade-up" data-aos-duration="1000" >혁신적이고 유망한 프로젝트와 기업을 발굴해 정밀한 시장 조사와 사업성 평가를<br />
                             통해 최적의 투자 결정을 내립니다. 이후 전략적 후속 지원과 지속적인 가치 창출<br />
                             관리를 통해 투자 수익을 극대화합니다.</p>
-                        <a href="#" class="btn_wrap">
+                        <a href="#" class="btn_wrap" data-aos="fade-up" data-aos-duration="1000" >
                             <span>사업분야 바로가기</span>
                         </a><!-- .btn_wrap end -->
                     </div><!-- .text_wrap end -->
                     <div class="img_wrap-03">
-                        <img src="img/main_imgs_txt1_3_1.png" alt="메인 이미지-03-1">
-                        <img src="img/main_imgs_txt1_3_2.png" alt="메인 이미지-03-2">
-                        <img src="img/main_imgs_txt1_3_3.png" alt="메인 이미지-03-3">
+                        <img data-aos="fade-up" data-aos-duration="1000" src="img/main_imgs_txt1_3_1.png" alt="메인 이미지-03-1">
+                        <img data-aos="fade-up" data-aos-duration="1000" src="img/main_imgs_txt1_3_2.png" alt="메인 이미지-03-2">
+                        <img data-aos="fade-up" data-aos-duration="1000" src="img/main_imgs_txt1_3_3.png" alt="메인 이미지-03-3">
                     </div><!-- .img_wrap-03 end -->
                 </div><!-- .item end -->
             </div><!-- .list end -->
@@ -346,9 +347,9 @@
 
         <section class="section-02">
             <div class="title">
-                <h2>NEWS</h2>
+                <h2 data-aos="fade-up" data-aos-duration="2000" data-aos-delay="700" >NEWS</h2>
                 <div class="btn_wrap">
-                    <div class="btn">
+                    <div class="btn" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="700">
                         <button class="prev">
                             <img class="prev_btn" src="img/slide_prev.svg" alt="이전 버튼">
                         </button><!-- .prev end -->
@@ -356,12 +357,12 @@
                             <img class="next_btn" src="img/slide_next.svg" alt="다음 버튼">
                         </button><!-- .next end -->
                     </div><!-- .btn end -->
-                    <a href="#" class="news">
+                    <a href="#" class="news" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="700">
                         <span>더 많은 소식 보러가기</span>
                     </a><!-- .news end -->
                 </div><!-- .btn_wrap -->
             </div><!-- .title end -->
-            <div class="swiper news_slide">
+            <div class="swiper news_slide" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500" >
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <a href="#">
@@ -451,9 +452,9 @@
         </section><!-- .section-02 end -->
 
         <section class="section-03">
-            <h2>대성그룹의 채용정보를 확인하세요.</h2>
+            <h2 data-aos="fade-up" data-aos-duration="2000" data-aos-delay="700" >대성그룹의 채용정보를 확인하세요.</h2>
             <div class="list">
-                <div class="item">
+                <div class="item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="700" >
                     <a href="#">
                         <img src="img/main_recruit_menu1_1.jpg" alt="채용정보 이미지 1">
                         <div class="text">
@@ -464,7 +465,7 @@
                         </div><!-- .text end -->
                     </a>
                 </div><!-- .item end -->
-                <div class="item">
+                <div class="item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="900" >
                     <a href="#">
                         <img src="img/main_recruit_menu1_2.jpg" alt="채용정보 이미지 2">
                         <div class="text">
@@ -521,5 +522,9 @@
             <img src="img/top_btn_arrow.svg" alt="위로가기">
         </a>
     </div><!-- .topbtn_wrap end -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
